@@ -1,0 +1,8 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME}     !-f
+RewriteCond %{REQUEST_FILENAME}     !-d
+
+RewriteRule ^([a-zA-Z0-9]+)$ parser.php?model=$1&operation=viewAll
+RewriteRule ^([a-zA-Z]+)/([0-9]+)$ parser.php?model=$1&id=$2&operation=viewOne
+RewriteRule ^([a-zA-Z]+)/([a-zA-Z]+)/([0-9]+)$ parser.php?model=$1&&operation=$2&id=$3
